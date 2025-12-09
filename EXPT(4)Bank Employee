@@ -1,0 +1,59 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class BankEmployee {
+private:
+    string name;
+    int accountNo;
+    double balance;
+    double withdraw_amount;
+
+public:
+    void setDetails() {
+        cout << "Enter Name: ";
+        getline(cin, name);
+
+        cout << "Enter Account Number: ";
+        cin >> accountNo;
+
+        cout << "Enter Present Balance: ";
+        cin >> balance;
+
+        cout << "Enter Amount to Withdraw: ";
+        cin >> withdraw_amount;
+        cout << "\n";
+    }
+
+    void printDetails() {
+        cout << "Name: " << name << endl;
+        cout << "Account Number: " << accountNo << endl;
+        
+        if (balance < 0) {
+            cout << "Invalid Balance!" << endl;
+        }
+        else {
+            cout << "Balance: " << balance << endl;
+        }
+
+        if (withdraw_amount > balance) {
+            cout << "Insufficient Balance!" << endl;
+        }
+        else if (withdraw_amount <= 0) {
+            cout << "Invalid Withdraw Amount!" << endl;
+        } 
+        else {
+            cout << "Remaining Balance: " << balance - withdraw_amount << endl;
+        }
+    }
+};
+
+int main() {
+    BankEmployee employee;
+
+    employee.setDetails();
+    employee.printDetails();
+
+    return 0;
+}
