@@ -1,0 +1,54 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class Student {
+private:
+    string name;
+    int rollNumber;
+    float marksSubject1;
+    float marksSubject2;
+    float totalScore;
+
+public:
+    Student():
+        name(""),
+        rollNumber(0),
+        marksSubject1(0.0),
+        marksSubject2(0.0),
+        totalScore(0.0) {}
+
+    void inputDetails() {
+        cout << "Enter Student Name: ";
+        getline(cin, name);
+
+        cout << "Enter roll number: ";
+        cin >> rollNumber;
+
+        cout << "Enter marks obtained in Subject 1: ";
+        cin >> marksSubject1;
+
+        cout << "Enter marks obtained in Subject 2: ";
+        cin >> marksSubject2;
+
+        totalScore = marksSubject1 + marksSubject2;
+    }
+
+    void displayDetails() {
+        cout << "\nStudent Details:\n";
+        cout << "Name: " << name << "\n";
+        cout << "Roll No: " << rollNumber << "\n";
+        cout << "Marks in Subject 1: " << marksSubject1 << "\n";
+        cout << "Marks in Subject 2: " << marksSubject2 << "\n";
+        cout << "Total Score: " << totalScore << "\n";
+    }
+};
+
+int main() {
+    Student student;
+    student.inputDetails();
+    student.displayDetails();
+
+    return 0;
+}
