@@ -5,15 +5,18 @@ using namespace std;
 int main() {
     int arr[5];
 
-    for (int &x : arr) cin >> x;
+    for (int &x : arr)
+    cin >> x;
 
     sort(arr, arr + 5);
     cout << "Ascending: ";
-    for (int x : arr) cout << x << " ";
+    for (int x : arr) 
+    cout << x << " ";
 
     sort(arr, arr + 5, greater<int>());
     cout << "\nDescending: ";
-    for (int x : arr) cout << x << " ";
+    for (int x : arr)   
+    cout << x << " ";
 
     return 0;
 }
